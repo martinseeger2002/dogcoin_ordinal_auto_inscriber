@@ -53,7 +53,7 @@ def run_node_commands(start, end, directory, file_prefix, file_extension):
 
             # Check for the specific error and retry
             elif "'64: too-long-mempool-chain'" in result_sync.stdout:
-                print("Detected specific error message, retrying in 10 seconds...")
+                print("Detected specific error message, retrying in 60 seconds...")
                 time.sleep(60)
             else:
                 print("Unknown response, stopping the retry loop.")
