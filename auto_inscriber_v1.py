@@ -71,10 +71,13 @@ def update_json_file(base_file_name, image_path, txid):
     with open(json_file_name, 'w') as file:
         json.dump(data, file, indent=4)
 
-# Example usage
-directory = 'C:\\doginals-main\\RiceCerts'
+# replace with dir to collection.
+directory = 'C:\\doginals-main\\collection'
+# replace with collection name. the file name without the serial number
 file_prefix = 'image'
+# replace with file extension
 file_extension = 'webp'
+# enter range of files to inscribe.
 start = 9
 end = 20
 run_node_commands(start, end, directory, file_prefix, file_extension)
