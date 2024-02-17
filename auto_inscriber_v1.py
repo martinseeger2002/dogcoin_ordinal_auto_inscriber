@@ -19,7 +19,7 @@ def run_node_commands(start, end, directory, file_prefix, file_extension):
         base_file_name = os.path.basename(image_path).split('.')[0][:-5]
 
         # Construct and run the first command
-        mint_command = f"node . mint DCHxodkzaKCLjmnG4LP8uH6NKynmntmCNz {image_path}"
+        mint_command = f"node . mint <Your Doge Address for storing inscriptions Only> {image_path}"
         result_mint = subprocess.run(mint_command, shell=True, capture_output=True, text=True)
         print("Output from mint command:")
         print(result_mint.stdout)
@@ -53,8 +53,8 @@ def run_node_commands(start, end, directory, file_prefix, file_extension):
 
             # Check for the specific error and retry
             elif "'64: too-long-mempool-chain'" in result_sync.stdout:
-                print("Detected specific error message, retrying in 60 seconds...")
-                time.sleep(60)
+                print("Detected specific error message, retrying in 300 seconds...")  # Change 60 to 300
+                time.sleep(300)  # Change 60 to 300
             else:
                 print("Unknown response, stopping the retry loop.")
                 break
