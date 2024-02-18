@@ -51,10 +51,10 @@ def run_node_commands(start, end, directory, file_prefix, file_extension):
                 update_json_file(base_file_name, image_path, txid)
                 break
 
-            # Check for the specific error and retry
+            # Check for the specific error and retry seconds
             elif "'64: too-long-mempool-chain'" in result_sync.stdout:
                 print("Detected specific error message, retrying in 10 seconds...")
-                time.sleep(10)
+                time.sleep(180)
             else:
                 print("Unknown response, stopping the retry loop.")
                 break
