@@ -1,7 +1,7 @@
 # Implementation :
 **Copy and run this from the same dir as the doginals .js**
 
-# Auto_inscriber_v1.py : 💯 
+# Auto_inscriber_OG.py : 💯 
 
 Big Chiefs Version of Auto inscriber (auto_inscriber_OG.py) 
 
