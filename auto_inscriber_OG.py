@@ -19,7 +19,7 @@ def run_node_commands(start, end, directory, file_prefix, file_extension):
         base_file_name = os.path.basename(image_path).split('.')[0][:-5]
 
         # Construct and run the first command
-        mint_command = f"node . mint DCHxodkzaKCLjmnG4LP8uH6NKynmntmCNz {image_path}"
+        mint_command = f"node . mint <Your Doge Address for storing inscriptions Only> {image_path}"
         result_mint = subprocess.run(mint_command, shell=True, capture_output=True, text=True)
         print("Output from mint command:")
         print(result_mint.stdout)
