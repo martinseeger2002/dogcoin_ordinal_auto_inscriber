@@ -3,11 +3,8 @@
 
 # Auto_inscriber_v1.py : 💯 
 
-Big Chiefs Version of Auto inscriber (auto_inscriber_v1.py) I tweaked a hair with
- MAX_RETRIES = 6
-BASE_RETRY_DELAY_SECONDS = 300
+Big Chiefs Version of Auto inscriber (auto_inscriber_OG.py) 
 
-this was added for when mempool was congested it would occasionaly get stuck in powershell and I kept getting transactions that I had to abandon which waisted Doge, this gives a 300 second break to allow utxo's and pending balance to return, so you can start the broadcast of next transaction successfully. this is the version i actively run now .....cooks for me
 
 # Auto_inscriber_OG2.py : 👍🏻 
 Auto Minter Version Changed 60 Second Sleep to 300 seconds Because of mempool congestion.....change parameters to your needs. 60 seconds Cooks FAST.....When mempools not busy
