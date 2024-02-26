@@ -36,5 +36,54 @@ def wait_for_utxo_completion(wallet_address):
         time.sleep(60)  # Check every minute
 
 
+# Itimized-00001-99999 File Name Conversion Script
+
+This Python script is designed to rename all files in a specified folder with a sequential numbering pattern. It's useful for organizing and numbering files in a consistent manner.
+
+## Usage
+
+1. **Clone the Repository:**
+
+    ```bash
+    git clone https://github.com/GreatApe42069/Itimized-00001-99999-File-Name-convert.git
+    ```
+
+2. **Navigate to the Script Directory:**
+
+    ```bash
+    `cd Itimized-00001-99999-File-Name-convert`
+    ```
+
+3. **Adjust Parameters:**
+
+    Open the `Itimized-00001-99999_File_name_convert.py` script and provide the correct path to the folder containing the files.
+
+4. **Run the Script:**
+
+    Execute the script using the following command:
+
+    ```bash
+    python "Itimized-00001-99999_File_name_convert.py"
+    ```
+
+5. **Parameters:**
+
+    - `folder_path` (str): Provide the path to the folder containing files that need renaming.
+
+6. **Notes:**
+
+    - The script uses a sequential numbering pattern from (00001 to 99999) for renaming.
+    - Files will be renamed in the order they are listed in the folder.
+    - The script renames all types of files in the specified folder.
+
+7. **Example:**
+
+    ```bash
+    python "Itimized-00001-99999_File_name_convert.py"
+    ```
+
+    This will rename all files in the specified folder with a sequential numbering pattern (00001 - 99999)
+
+Feel free to customize the script parameters and usage instructions to suit your specific needs.
 
 
