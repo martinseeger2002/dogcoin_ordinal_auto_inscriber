@@ -24,7 +24,7 @@ def rename_files(folder_path):
 
 if __name__ == "__main__":
     # Provide the correct path to the folder containing files
-    folder_path = r"C:\Doginals-main\Doginal-Apes"
+    folder_path = r"C:\Doginals-main\Doginal-Apes_BUT-YOUR-COLLECTION_HERE"
 
     # Call the function to rename files
     rename_files(folder_path)
