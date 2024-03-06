@@ -1,4 +1,4 @@
-# File Renamer README
+# File RenamerItimized-00001-99999_File_name_convert.py README
 
 ### Functionality: The script defines a function rename_files that takes a folder path as an argument and sequentially renames each file within that folder from(00001-99999)
 
