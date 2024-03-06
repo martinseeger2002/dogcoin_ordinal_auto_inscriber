@@ -1,6 +1,6 @@
-#File Renamer README
+# File Renamer README
 
-## Functionality: The script defines a function rename_files that takes a folder path as an argument and sequentially renames each file within that folder from(00001-99999)
+### Functionality: The script defines a function rename_files that takes a folder path as an argument and sequentially renames each file within that folder from(00001-99999)
 
 ## File Renaming Process:
 
