@@ -10,7 +10,7 @@ Big Chiefs Version of Auto inscriber (auto_inscriber_OG.py)
 Auto Minter Version Changed 60 Second Sleep to 300 seconds Because of mempool congestion.....change parameters to your needs. 60 seconds Cooks FAST.....When mempools not busy
 
 
-# Auto_inscriber_OG2.py : 🔢 
+# Auto_inscriber_v3.py : 🔢 
 
 An untested work in Progress Auto inscriber Version of Big Chiefs OG script free to play with i would also like to still add @BookOnDoge  's   utxo tracker script idea as well Auto inscriber Version im working on for auto mempool tracking, auto fee set in .env file based on mempool congestion, max retry limit with breaktime parameters as well. This modification adds a functionality to adjust fees in the .env file based on mempool congestion, and adds a wallet sync command after adjusting fees and waits for 60 seconds before proceeding with the next commands. Make sure to place it in the appropriate location within your script.
 
