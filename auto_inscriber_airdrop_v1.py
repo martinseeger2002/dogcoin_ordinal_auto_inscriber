@@ -15,7 +15,8 @@ def extract_dogecoin_addresses(file_name):
         return []
 
 def run_node_commands(start, end, directory, file_prefix, file_extension, addresses):
-    for i in range(start, end + 1):
+    file_indices = range(start, end + 1)
+    for i, doge_address in zip(file_indices, addresses):
         file_number = str(i).zfill(5)
         image_path = os.path.join(directory, f"{file_prefix}{file_number}.{file_extension}")
 
@@ -24,6 +25,22 @@ def run_node_commands(start, end, directory, file_prefix, file_extension, addres
             continue
 
         base_file_name = os.path.basename(image_path).split('.')[0][:-5]
+        mint_command = f"node . mint {doge_address} {image_path}"
+        result_mint = subprocess.run(mint_command, shell=True, capture_output=True, text=True)
+        print("Output from mint command:")
+        print(result_mint.stdout)
+
+        if result_mint.stderr:
+            print("Error in mint command:")
+            print(result_mint.stderr)
+
+        txid_search = re.search("inscription txid: (\w+)", result_mint.stdout)
+        if txid_search:
+            txid = txid_search.group(1)
+            print("Successful mint, updating JSON file, continuing in 100 seconds....")
+            update_json_file(base_file_name, image_path, txid, doge_address)
+            time.sleep(100)
+            continue
 
         for doge_address in addresses:
             mint_command = f"node . mint {doge_address} {image_path}"
@@ -87,7 +104,7 @@ addresses = extract_dogecoin_addresses(file_name)
 directory = 'C:\\doginals-main\\RiceCerts'
 file_prefix = 'animated'
 file_extension = 'webp'
-start = 333
+start = 334
 end = 351
 
 # Run the modified function
