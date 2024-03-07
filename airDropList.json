@@ -131,6 +131,12 @@
             "at": "@lukewrightmain",
             "note": "bellscoin founder",
             "dogecoin_address": "DDe26kVwvoCvZ82RFjAcm22SYxdbLZXYfC"
+        },
+        {
+            "handle": "alex",
+            "at": "@mydogecto",
+            "note": "",
+            "dogecoin_address": "DLRAyAnjpP6tHtzT6D7MfpWuG1nEYvw9dA"
         }
     ]
 }
