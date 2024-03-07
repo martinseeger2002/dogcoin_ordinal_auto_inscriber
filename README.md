@@ -19,7 +19,7 @@ An untested work in Progress Auto inscriber Version of Big Chiefs OG script free
 This version (v4) of the Python script enhances the inscription automation process for a collection of digital images using Node.js commands. Specifically, it addresses and resolves errors related to 25KB file-sized inscriptions. The script interacts with a blockchain-based system, performing minting and wallet synchronization for each image within a specified range.
 
 
-# Auto Inscriber Airdrop v1
+# Auto Inscriber Airdrop v1 👍🏻
 
 This Python script automates the process of inscribing and airdroppng images. It extracts Dogecoin addresses from a specified JSON file, mints inscriptions from specified filepath, airdrops the minted inscription, and updates a JSON file with transaction details. The script handles specific error messages and ensures successful inscription.
 
