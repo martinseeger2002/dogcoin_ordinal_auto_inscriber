@@ -155,6 +155,19 @@
             "at": "@Ligma3271461",
             "note": "",
             "dogecoin_address": "DJHgu3mbW8etVcA8HA8h3my4gkv6qGDa3y"
+        },
+        {
+            "handle": "ÐogePay",
+            "at": "@Dogepay_DRC20",
+            "note": "",
+            "dogecoin_address": "DSaujTCT1DdPCknrtT2dvtwAt1NEarU6W6"
+        },
+        {
+            "handle": "Glitch",
+            "at": "@0nes_and_Zeros",
+            "note": "",
+            "dogecoin_address": "DMNg3u2NrPFhSUbNBnkPAJfemDPH5aXUqw"
         }
+    ]
     ]
 }
