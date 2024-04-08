@@ -2,22 +2,22 @@ def create_html_files(start, end):
     """
     Creates multiple HTML files with titles 'Nerd Stone #x',
     where x is a number in the specified range. Each file is
-    named sequentially (e.g., NerdStone00001.html).
+    named sequentially (e.g., CollectionName.html).
     """
     template = """<!DOCTYPE html>
 <html>
 <head>
-    <title>Nerd Stone #{}</title>
-    <script src="/content/f8d6d9594ff93cb4190cfa81d877b81b59b0d2acd975685fdd12efd0452bd190i0"></script>
+    <title>Collection Name #{}</title>
+    <script src="/content/<JS lib inscription ID"></script>
 </head>
 <body>
-    <script src="/content/da759d4d72fbdefb9d0d81c41e2c7a90bca7c9b6b5f0be8d5cba3a9f310dd0bai0"></script>
+    <script src="/content/<your script inscription ID>"></script>
 </body>
 </html>
 """
 
     for i in range(start, end + 1):
-        file_name = f"NerdStone{str(i).zfill(5)}.html"
+        file_name = f"CollectionName{str(i).zfill(5)}.html"
         with open(file_name, "w") as file:
             file.write(template.format(i))
 
