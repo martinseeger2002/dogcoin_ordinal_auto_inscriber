@@ -18,6 +18,9 @@ An untested work in Progress Auto inscriber Version of Big Chiefs OG script free
 
 This version (v4) of the Python script enhances the inscription automation process for a collection of digital images using Node.js commands. Specifically, it addresses and resolves errors related to 25KB file-sized inscriptions. The script interacts with a blockchain-based system, performing minting and wallet synchronization for each image within a specified range.
 
+# Auto_inscriber_v5.py
+
+The script now robustly captures and logs txids in both scenarios - a direct success from the mint command and a success from the wallet sync command after encountering the 'too-long-mempool-chain' error. This ensures that no successful transactions go unlogged, maintaining accurate records in your JSON file.
 
 # Itimized-00001-99999 File Name Conversion Script
 
