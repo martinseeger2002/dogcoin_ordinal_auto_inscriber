@@ -7,7 +7,7 @@ def create_html_files(start, end):
     template = """<!DOCTYPE html>
 <html>
 <head>
-    <title>Nerd Stone #{}</title>
+    <title>Collection Name #{}</title>
     <script src="/content/<js lib inscription ID>"></script>
 </head>
 <body>
