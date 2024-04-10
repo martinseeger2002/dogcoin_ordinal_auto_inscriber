@@ -18,6 +18,17 @@ An untested work in Progress Auto inscriber Version of Big Chiefs OG script free
 
 This version (v4) of the Python script enhances the inscription automation process for a collection of digital images using Node.js commands. Specifically, it addresses and resolves errors related to 25KB file-sized inscriptions. The script interacts with a blockchain-based system, performing minting and wallet synchronization for each image within a specified range.
 
+# Auto_inscriber_v5.py
+
+The script now robustly captures and logs txids in both scenarios - a direct success from the mint command and a success from the wallet sync command after encountering the 'too-long-mempool-chain' error. This ensures that no successful transactions go unlogged, maintaining accurate records in your JSON file.
+
+# createHtmlCollection.py
+
+This script generates HTML files with specific titles and structure. The file titles are "Collection Name #x", where x ranges from the start to end values provided. In your example, it's creating files named from "Collection00001.html" to "Collection10000.html".
+
+Each HTML file follows a set template, including basic HTML structure with a head and body section. The title of each page is dynamically set to match its filename. The script also includes references to two JavaScript files located at /content/, but the actual script IDs ("<js lib inscription ID>" and "<content script inscription ID>") are placeholders and would need to be replaced with actual IDs.
+
+To personalize the script for your specific collection, you would replace the placeholder "Collection Name" in the template string with the name of your collection. This placeholder currently appears in the <title> tag within the HTML template. When the script runs, it uses this template to create each HTML file, so changing the placeholder will reflect in the title of every generated HTML file.
 
 # Auto Inscriber Airdrop v1 👍🏻
 
