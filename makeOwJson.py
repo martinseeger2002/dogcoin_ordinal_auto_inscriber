@@ -24,7 +24,7 @@ for key, value in data.items():
         transformed_data.append(transformed_entry)
 
 # Write the transformed data to a new JSON file
-with open('TransformedNerdStones.json', 'w') as file:
+with open('OWcollection.json', 'w') as file:
     json.dump(transformed_data, file, indent=4)
 
 print("Transformation complete. Data saved in OWcollection.json")
