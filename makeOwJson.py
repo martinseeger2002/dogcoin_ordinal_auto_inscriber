@@ -7,7 +7,7 @@ def extract_number_from_filename(filename):
     return int(match.group(1)) if match else None
 
 # Read the original JSON file
-with open('NerdStone.json', 'r') as file:
+with open('autoInscriberOutput.json', 'r') as file:
     data = json.load(file)
 
 # Transform the data
@@ -18,7 +18,7 @@ for key, value in data.items():
         transformed_entry = {
             "id": value + "i0",
             "meta": {
-                "name": f"Nerd Stone #{number}"
+                "name": f"Collection name #{number}"
             }
         }
         transformed_data.append(transformed_entry)
@@ -27,4 +27,4 @@ for key, value in data.items():
 with open('TransformedNerdStones.json', 'w') as file:
     json.dump(transformed_data, file, indent=4)
 
-print("Transformation complete. Data saved in TransformedNerdStones.json")
+print("Transformation complete. Data saved in OWcollection.json")
