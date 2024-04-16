@@ -10,8 +10,8 @@ for item in original_data:
     new_item = {
         "inscriptionId": item["id"],
         "name": item["meta"]["name"],
-        "imageURI": "https://media.ordinalswallet.com/c32ff552851a130d4100aeec5950725884bd8f3efa18d25b56a5e0a589c28847.jpeg",
-        "collectionSymbol": "nerd_stones"
+        "imageURI": "https://media.jpeg",
+        "collectionSymbol": "collection_name"
     }
     transformed_data["body"].append(new_item)
 
