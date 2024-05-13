@@ -81,7 +81,7 @@ def batch_process(address_list):
                 break
             address = address_list[i + j]['address']
             command = f"node . drc-20 mint {address} {token} {amount}"
-            print(f"Processing address {address} (index {i + j})")
+            print(f"Processing {command} (index {i + j})")
             output = run_node_command(command)
             if output:
                 txid = extract_txid(output)
