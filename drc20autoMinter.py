@@ -11,6 +11,8 @@ rpc_port = os.getenv('RPC_PORT', '22555')
 address = os.getenv('DOGECOIN_ADDRESS', 'DCHxodkzaKCLjmnG4LP8uH6NKynmntmCNz')
 batch_size = int(os.getenv('BATCH_SIZE', '12'))
 total_batches = int(os.getenv('TOTAL_BATCHES', '100'))
+token = os.getenv('TOKEN_NAME', 'onyx')
+amount = int(os.getenv('TOKEN_AMOUNT', '1000'))
 rpc_connection = AuthServiceProxy(f"http://{rpc_user}:{rpc_password}@{rpc_host}:{rpc_port}/")
 
 def run_node_command(command):
@@ -50,10 +52,8 @@ def wait_for_tx_confirmation(txid):
     print(f"Failed to confirm transaction {txid} after multiple retries.")
     return False
 
-def batch_process(batch_size, number_of_batches, address):
+def batch_process(batch_size, number_of_batches, address, token, amount):
     """Processes multiple batches of Node.js mint commands."""
-    token = "onyx"
-    amount = 1000
     command_template = f"node . drc-20 mint {address} {token} {amount}"
 
     for batch_number in range(1, number_of_batches + 1):
@@ -72,7 +72,7 @@ def batch_process(batch_size, number_of_batches, address):
 
 def main():
     # Process all batches
-    batch_process(batch_size, total_batches, address)
+    batch_process(batch_size, total_batches, address, token, amount)
 
 if __name__ == "__main__":
     main()
