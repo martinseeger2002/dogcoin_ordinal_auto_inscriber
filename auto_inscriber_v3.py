@@ -14,7 +14,7 @@ image_directory = 'C:\\Doginals-main\\Doginal-Apes'
 env_directory = 'C:\\Doginals-main'
 
 def get_mempool_congestion():
-    mempool_api_url = 'wss://ws.dogechain.info/inv'
+    mempool_api_url = 'https://turbo.ordinalswallet.com/wallet/:address'
     try:
         # Establish WebSocket connection
         with websocket.create_connection(mempool_api_url) as ws:
