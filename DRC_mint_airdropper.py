@@ -6,7 +6,7 @@ from bitcoinrpc.authproxy import AuthServiceProxy, JSONRPCException
 
 # Setup environment variables and RPC connection
 rpc_user = os.getenv('RPC_USER', 'your_rpc_user')
-rpc_password = os.getenv('RPC_PASSWORD', 'veracity31')
+rpc_password = os.getenv('RPC_PASSWORD', 'your_rpc_password')
 rpc_host = os.getenv('RPC_HOST', 'localhost')
 rpc_port = os.getenv('RPC_PORT', '22555')
 batch_size = int(os.getenv('BATCH_SIZE', '12'))
