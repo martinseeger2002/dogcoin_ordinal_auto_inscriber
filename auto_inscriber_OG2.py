@@ -3,6 +3,10 @@ import time
 import json
 import re
 import os
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
 
 def run_node_commands(start, end, directory, file_prefix, file_extension):
     for i in range(start, end + 1):
@@ -12,51 +16,55 @@ def run_node_commands(start, end, directory, file_prefix, file_extension):
 
         # Check if file exists
         if not os.path.isfile(image_path):
-            print(f"File not found: {image_path}")
+            logging.error(f"File not found: {image_path}")
             continue
 
         # Extract base file name without serial number
         base_file_name = os.path.basename(image_path).split('.')[0][:-5]
 
         # Construct and run the first command
-        mint_command = f"node . mint (wallet address) {image_path}"
+        mint_command = f"node . mint < Your Inscription Recieving Address Here> {image_path}"
         result_mint = subprocess.run(mint_command, shell=True, capture_output=True, text=True)
-        print("Output from mint command:")
-        print(result_mint.stdout)
+        logging.info("Output from mint command:")
+        logging.info(result_mint.stdout)
 
         # Check if there is an error in the first command
         if result_mint.stderr:
-            print("Error in mint command:")
-            print(result_mint.stderr)
+            logging.error("Error in mint command:")
+            logging.error(result_mint.stderr)
 
         # Check for specific error message in the first command's output
         if "'64: too-long-mempool-chain'" in result_mint.stdout:
-            print("Detected specific error message, proceeding to wallet sync...")
+            logging.info("Detected specific error message, proceeding to wallet sync...")
 
         # Loop for the second command
-        while True:
+        max_retries = 6
+        retry_count = 0
+
+        while retry_count < max_retries:
             wallet_sync_command = "node . wallet sync"
             result_sync = subprocess.run(wallet_sync_command, shell=True, capture_output=True, text=True)
-            print("Output from wallet sync command:")
-            print(result_sync.stdout)
+            logging.info("Output from wallet sync command:")
+            logging.info(result_sync.stdout)
 
             if result_sync.stderr:
-                print("Error in wallet sync command:")
-                print(result_sync.stderr)
+                logging.error("Error in wallet sync command:")
+                logging.error(result_sync.stderr)
 
             # Check for success message
             if "inscription txid" in result_sync.stdout:
-                print("Successful inscription, extracting txid and updating JSON file.")
-                txid = re.search("inscription txid: (\w+)", result_sync.stdout).group(1)
+                logging.info("Successful inscription, extracting txid and updating JSON file.")
+                txid = re.search(r"inscription txid: (\w+)", result_sync.stdout).group(1)
                 update_json_file(base_file_name, image_path, txid)
                 break
 
-            # Check for the specific error and retry seconds
+            # Check for the specific error and retry
             elif "'64: too-long-mempool-chain'" in result_sync.stdout:
-                print("Detected specific error message, retrying in 10 seconds...")
-                time.sleep(180)
+                logging.info(f"Detected specific error message, retrying in 300 seconds (Attempt {retry_count + 1}/{max_retries})")
+                time.sleep(300)
+                retry_count += 1
             else:
-                print("Unknown response, stopping the retry loop.")
+                logging.warning("Unknown response, stopping the retry loop.")
                 break
 
 def update_json_file(base_file_name, image_path, txid):
@@ -65,20 +73,19 @@ def update_json_file(base_file_name, image_path, txid):
     if os.path.isfile(json_file_name):
         with open(json_file_name, 'r') as file:
             data = json.load(file)
-    
+
     data[os.path.basename(image_path)] = txid
 
     with open(json_file_name, 'w') as file:
         json.dump(data, file, indent=4)
 
-# replace with dir to collection.
-directory = 'C:\\doginals-main\\collection'
-# replace with collection name. the file name without the serial number
-file_prefix = 'image'
-# replace with file extension
-file_extension = 'webp'
-# enter range of files to inscribe.
-start = 9
-end = 20
+# Replace with dir to collection.
+directory = 'C:\\Doginals-main\\<Doginal-Apes- But Your Collection File Name Here>'
+# Replace with collection name. The file name without the serial number.
+file_prefix = 'Ape' <File name without the 5 zeros>
+# Replace with file extension.
+file_extension = 'jpg' < image extension without the period>
+# Enter the range of files to inscribe.
+start = 1
+end = 22
 run_node_commands(start, end, directory, file_prefix, file_extension)
-
